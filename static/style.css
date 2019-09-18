@@ -22,7 +22,7 @@ footer{
 }
 
 /* 头像 */
-h2{
+.avatar{
     width: 40px;
 }
 
@@ -50,6 +50,9 @@ h2{
 /* doge图片 */
 .totoro{
     display: block;
-    margin: 0 auto;
+    margin: 30px auto 0px auto;
     height: 100px;
+}
+samll{
+    display: inline;
 }

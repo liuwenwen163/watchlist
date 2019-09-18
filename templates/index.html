@@ -17,9 +17,10 @@
         <li>{{ movie.title }} - {{ movie.year }}</li> {#等同于movie['title']#}
         {% endfor %} {# 使用 endfor 标签结束for语句 #}
     </ul>
-    <img class="totoro" alt="doge" src="{{ url_for('static', filename='images/doge.jpg') }}">
+    <img class="totoro" alt="doge" src="{{ url_for('static', filename='images/doge.gif') }}">
+
     <footer>
-        <small>&copy; 2018 <a class="totoro" href="http://helloflask.com/tutorial/">HelloFlask</a></small>
+        <small>&copy; 2018 <a href="http://helloflask.com/tutorial/">HelloFlask</a></small>
     </footer>
 </body>
 </html>

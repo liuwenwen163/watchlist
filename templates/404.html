@@ -1,0 +1,45 @@
+<!-- 使用模板前 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user.name }}</title>
+    <link rel="icon" href="{{ url_for('static', filename='/images/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+</head>
+<body>
+    <h2>
+        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.jpg') }}">
+        <p>{{ user.name }}'s Watchlist</p>
+    </h2>
+    <div class="nvg">
+        <a href="{{ url_for('index') }}">返回主页</a>
+    </div>
+    <ul class="movie-list">
+        <li>
+            <span>┗|｀O′|┛ 嗷~~，你来到了网页的荒芜之地！</span>
+                <span class="float-right">
+                    <a href="{{ url_for('index') }}">返回主页</a>
+                </span>
+        </li>
+    </ul>
+</body>
+<footer>
+<small>&copy; 2018 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
+</footer>
+</body>
+</html> -->
+
+<!-- 使用模板后 -->
+{% extends 'templates_base.html' %}
+
+{% block content %}
+<ul class="movie-list">
+    <li>
+        Page Not Found - 404
+        <span class="float-right">
+            <a href="{{ url_for('index') }}">Go Back</a>
+        </span>
+    </li>
+</ul>
+{% endblock %}

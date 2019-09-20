@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+<!-- 使用模板前 -->
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>hello flask</title>
+    <link rel="icon" href="{{ url_for('static', filename='/images/favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -23,4 +25,24 @@
         <small>&copy; 2018 <a href="http://helloflask.com/tutorial/">HelloFlask</a></small>
     </footer>
 </body>
-</html>
+</html> -->
+
+{# 声明当前模板继承自哪里 #}
+{% extends 'templates_base.html' %}
+
+{% block content %}
+<p>{{ movies|length }} Titles</p>
+<ul class="movie-list">
+    {# 迭代 movies 变量 #}
+    {% for movie in movies %}
+        {# 等同于movie['title'] #}
+        <li>{{ movie.title }} - {{ movie.year }}
+            <span class="float-right">
+                <a class="imdb" href="https://www.imdb.com/find?q={{ movie.title }}" target="_blank" title="Find this movie on IMDB">IMDB</a>
+            </span>
+        </li>
+    {# 使用 endfor 标签结束for语句 #}
+    {% endfor %}
+</ul>
+<img class="totoro" alt="doge" src="{{ url_for('static', filename='images/doge.gif') }}" title="to~to~ro~">
+{% endblock %}

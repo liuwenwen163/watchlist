@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2019-09-17 11:33:14
 * @Last Modified by:   Marte
-* @Last Modified time: 2019-09-17 14:50:52
+* @Last Modified time: 2019-09-20 14:10:22
 */
 
 /* 页面整体 */
@@ -21,9 +21,37 @@ footer{
     padding: 10px;
 }
 
-/* 头像 */
+/* 顶部头像区域 */
+body h2 p,img{
+    display: inline;
+}
 .avatar{
     width: 40px;
+}
+
+/* 设置导航栏 */
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li{
+    float: left;
+}
+
+nav li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+nav li a:hover{
+    background-color: #111;
 }
 
 /* 电影列表 */
@@ -45,6 +73,20 @@ footer{
 
 .movie-list li:hover{
     background-color: #f8f9fa;
+}
+.imdb{
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    text-decoration: #f5c518;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+
+
+/* 404页面中的特殊样式 */
+.float-right{
+    float: right;
 }
 
 /* doge图片 */

@@ -23,10 +23,20 @@ db = SQLAlchemy(app)  # 初始化扩展，传入程序实例 app
 
 @app.route('/')
 def index():
-    user = User.query.first()
     movies = Movie.query.all()
-    return render_template('index.html', user=user, movies=movies)
+    return render_template('index.html', movies=movies)
 
+
+@app.errorhandler(404) # 传入要处理的错误代码
+def page_not_found(e):  # 接受异常对象作为参数
+    # 返回模板和状态码
+    return render_template('404.html',), 404
+
+@app.context_processor
+def inject_user():
+    user = User.query.first()
+    # 返回字典 {'user': user}
+    return dict(user=user)
 
 # 创建数据库模型
 class User(db.Model):   # 表名user，自动生成小写处理
@@ -38,6 +48,7 @@ class Movie(db.Model):  # 表名movie
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(60))
     year = db.Column(db.String(4))
+
 
 # 添加一些虚拟数据，引入click，需要在命令行敲击命令进行创建
 @app.cli.command()

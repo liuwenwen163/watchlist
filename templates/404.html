@@ -1,3 +1,17 @@
+<!-- 使用模板后 -->
+{% extends 'templates_base.html' %}
+
+{% block content %}
+<ul class="movie-list">
+    <li>
+        Page Not Found - 404
+        <span class="float-right">
+            <a href="{{ url_for('index') }}">Go Back</a>
+        </span>
+    </li>
+</ul>
+{% endblock %}
+
 <!-- 使用模板前 -->
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -30,16 +44,3 @@
 </body>
 </html> -->
 
-<!-- 使用模板后 -->
-{% extends 'templates_base.html' %}
-
-{% block content %}
-<ul class="movie-list">
-    <li>
-        Page Not Found - 404
-        <span class="float-right">
-            <a href="{{ url_for('index') }}">Go Back</a>
-        </span>
-    </li>
-</ul>
-{% endblock %}

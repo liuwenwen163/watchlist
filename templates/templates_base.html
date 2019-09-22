@@ -20,7 +20,13 @@
     </h2>
     <nav>
         <ul>
-            <li><a href="{{ url_for( 'index' ) }}">Home</a></li>
+            <li><a href="{{ url_for( 'index' ) }}">主页</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('settings') }}">更改用户名</a></li>
+                <li><a href="{{ url_for('logout') }}">注销</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">登录</a></li>
+            {% endif %}
         </ul>
     </nav>
     {# 用来 插入页面的主体内容 #}

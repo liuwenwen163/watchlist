@@ -1,0 +1,9 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+<h3>修改用户名</h3>
+<form method="post">
+    输入要修改的用户名：&nbsp;<input type="text" name="name" autocomplete="off" required value="{{ current_user.name }}">
+    <input type="submit" class="btn" name="submit" value="Save">
+</form>
+{% endblock %}
